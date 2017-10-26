@@ -1,0 +1,263 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "API Lapak Kita",
+        "description": "Ini adalah API Lapak Kita. Anda bisa mendapatkan informasi lebih lanjut melalui laman http://saranamediaselular.com . Untuk contoh service ini, kita akan menggunakan 'special-key' untuk testing the authorization filters.",
+        "contact": {
+            "name": "Kukuh Nugroho",
+            "url": "https://www.kukuhnugroho.com"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost/lara_api/public/api/docs",
+    "basePath": "",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/api/costumers": {
+            "get": {
+                "tags": [
+                    "Costumers"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Operations about product",
+                "operationId": "api.costumers.index",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Costumers overview."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Costumers"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Refund an costumers. NOTE: This method needs a valid CSRF token to work!",
+                "operationId": "api.costumers.refund",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of costumers",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Refund successful."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    },
+                    "500": {
+                        "description": "Either costumers or charge ID were not found."
+                    }
+                }
+            }
+        },
+        "/api/costumers/{id}/": {
+            "get": {
+                "tags": [
+                    "Costumers"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Find an costumers by ID.",
+                "operationId": "api.costumers.refund",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of costumers",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find successful."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    },
+                    "500": {
+                        "description": "Either costumers or charge ID were not found."
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Costumers"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Update an costumers by ID.",
+                "operationId": "api.costumers.refund",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of costumers",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Update successful."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    },
+                    "500": {
+                        "description": "Either costumers or charge ID were not found."
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Costumers"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Delete an costumers by ID.",
+                "operationId": "api.costumers.refund",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of costumers",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Delete successful."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    },
+                    "500": {
+                        "description": "Either costumers or charge ID were not found."
+                    }
+                }
+            }
+        },
+        "/api/orders": {
+            "get": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Operations about product",
+                "operationId": "api.orders.index",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Orders overview."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    }
+                }
+            }
+        },
+        "/api/produks": {
+            "get": {
+                "tags": [
+                    "Produks"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Operations about product",
+                "operationId": "api.produks.index",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "produks overview."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    }
+                }
+            }
+        },
+        "/api/users": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Operations about product",
+                "operationId": "api.users.index",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Users overview."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Error": {
+            "required": [
+                "code",
+                "message"
+            ],
+            "properties": {
+                "code": {
+                    "description": "Class ApiController",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "description": "Class ApiController",
+                    "type": "string"
+                }
+            }
+        },
+        "Produks": {
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "table": {
+                    "type": "string",
+                    "format": "string"
+                }
+            }
+        }
+    }
+}

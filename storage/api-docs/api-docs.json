@@ -1,0 +1,366 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "API Lapak Kita",
+        "description": "Ini adalah API Lapak Kita. Anda bisa mendapatkan informasi lebih lanjut melalui laman http://saranamediaselular.com . Untuk contoh service ini, kita akan menggunakan 'special-key' untuk testing the authorization filters.",
+        "contact": {
+            "name": "Kukuh Nugroho",
+            "url": "https://www.kukuhnugroho.com"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost/lara_api/public/api/",
+    "basePath": "",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/api/orders": {
+            "get": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Operations about product",
+                "operationId": "api.orders.index",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Orders overview."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Refund an Orders. NOTE: This method needs a valid CSRF token to work!",
+                "operationId": "api.orders.refund",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of Orders",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Refund successful."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    },
+                    "500": {
+                        "description": "Either Orders or charge ID were not found."
+                    }
+                }
+            }
+        },
+        "/api/orders/{id}/": {
+            "get": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Find an Orders by ID.",
+                "operationId": "api.orders.refund",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of Orders",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find successful."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    },
+                    "500": {
+                        "description": "Either Orders or charge ID were not found."
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Update an Orders by ID.",
+                "operationId": "api.orders.refund",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of Orders",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Update successful."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    },
+                    "500": {
+                        "description": "Either Orders or charge ID were not found."
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Delete an Orders by ID.",
+                "operationId": "api.orders.refund",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of Orders",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Delete successful."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    },
+                    "500": {
+                        "description": "Either Orders or charge ID were not found."
+                    }
+                }
+            }
+        },
+        "/produks": {
+            "get": {
+                "tags": [
+                    "Produks"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Operations about product",
+                "operationId": "api.produks.index",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Produks overview."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    },
+                    "404": {
+                        "description": "Not found."
+                    },
+                    "500": {
+                        "description": "Internal Server Error."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Produks"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Create new Produks. NOTE: This method needs a valid CSRF token to work!",
+                "operationId": "api.produks.store",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Create new Produk",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Produks"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Refund successful."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    },
+                    "500": {
+                        "description": "Internal Server Error."
+                    }
+                }
+            }
+        },
+        "/produks/{id}": {
+            "get": {
+                "tags": [
+                    "Produks"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Find Produks by ID.",
+                "operationId": "api.produks.show",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of Produks",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Find successful."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    },
+                    "500": {
+                        "description": "Either Produks or charge ID were not found."
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Produks"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Update Produks by ID.",
+                "operationId": "api.produks.update",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of Produks",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Produks"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Update successful."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    },
+                    "500": {
+                        "description": "Either Produks or charge ID were not found."
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Produks"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Delete Produks by ID.",
+                "operationId": "api.produks.delete",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of Produks",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Delete successful."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    },
+                    "500": {
+                        "description": "Either Produks or charge ID were not found."
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Error": {
+            "required": [
+                "code",
+                "message"
+            ],
+            "properties": {
+                "code": {
+                    "description": "Class ApiController",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "description": "Class ApiController",
+                    "type": "string"
+                }
+            }
+        },
+        "Produks": {
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "table": {
+                    "type": "string",
+                    "format": "string"
+                }
+            }
+        }
+    }
+}
